@@ -10,7 +10,7 @@ name: Docker-Login-Build-Push
 on:
   # triggers on push to master branch
   push:
-    branches: [master]
+    branches: [main]
   workflow_dispatch: 
 # variables used in this workflow
 env:
