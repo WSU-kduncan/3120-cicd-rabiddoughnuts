@@ -33,7 +33,7 @@ jobs:
       #		only for the architecture and operating system that the user invoking the build happens to run.
       #	Docs on docker build vs buildx: https://docs.docker.com/buildx/working-with-buildx/
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
       # Login in to DockerHub, credentials stored as GitHub repository secrets
       #    Usage documentation: https://github.com/marketplace/actions/docker-login
       - name: Login to DockerHub
