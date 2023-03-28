@@ -20,11 +20,11 @@
 
 # GitHub Actions
 
-- Configuring GitHub Secrets
-  - What secrets were set based on what info
-- Behavior of GitHub workflow
-  - what does it do and when
-  - what variables in workflow are custom to your project
+- To make GitHub secrets you go to the `settings` of your repository, scroll down to the `secrets` tab, open it, select `actions` and then `create new secret`.
+  - A Docker username secret and a Docker password or auth token secret.
+- I created a GitHub workflow to automate syncronization of my Dockerhub.
+  - This workflow activates whenever I push an update to the main branch of my repo, and logs into Dockerhub, and then builds and pushes an image from my docker Dockerfile.
+  - I use an environment variable for my Dockerhub repo name, as well as my unique secrets for my Dockerhub username and login credentials.
 
 # Deployment
 
