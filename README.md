@@ -1,5 +1,22 @@
 # Project Overview
 
+```mermaid
+  flowchart LR
+    subgraph Code
+    a1(code to be <br> containerized)
+    a2(Dockerfile for <br> containerization)
+    end
+    subgraph Github
+    b1(workflow gets <br> activated on <br> push to build <br> new image and <br> upload to Dockerhub)
+    end
+    subgraph Dockerhub
+    c1(Dist. point for <br> updated containers)
+    end
+    Code-->Github
+    Dockerhub-->Code
+    Github-->Dockerhub
+```
+    
 - This project is to practice using containers and images to streamline development processes. I am using Docker Desktop as my container software, working in wsl2, and making an image that hosts a web server using apache2.
 - Part 4 - Diagramming goes here
   - Include a diagram (or diagrams) of your entire workflow. Meaning it should start with a project change / update, the steps that happen in between, and end with the updated version when the server is queried (web page is accessed)
@@ -26,14 +43,3 @@
   - This workflow activates whenever I push an update to the main branch of my repo, and logs into Dockerhub, and then builds and pushes an image from my docker Dockerfile.
   - I use an environment variable for my Dockerhub repo name, as well as my unique secrets for my Dockerhub username and login credentials.
 
-# Deployment
-
-- Description of container restart script
-- Setting up a webhook on the server
-  - How you created you own listener
-  - How you installed the [webhook on GitHub](https://github.com/adnanh/webhook)
-  - How to keep the webhook running if the instance is on
-- Description of Webhook task definition file
-- Steps to set up a notifier in GitHub or DockerHub
-
-[![](https://mermaid.ink/img/pako:eNpVjstqw0AMRX9FaNVC_ANeFBq7zSbQQrPzZCFsOTMk80CWCcH2v3ccb1qtxD3nCk3Yxo6xxP4W760lUTjVJkCe96ay4gb1NJyhKN7mAyv4GPgxw_7lEGGwMSUXLq-bv18lqKbjqjGodeG6bKh69r8Cz1A3R0oa0_kvOd3jDB-N-7b5_H9ihXPrs-mp7KloSaAieSq4Q8_iyXX5_WlNDKplzwbLvHYkV4MmLNmjUePPI7RYqoy8wzF1pFw7ugj5LVx-AfLqVWg?type=png)](https://mermaid.live/edit#pako:eNpVjstqw0AMRX9FaNVC_ANeFBq7zSbQQrPzZCFsOTMk80CWCcH2v3ccb1qtxD3nCk3Yxo6xxP4W760lUTjVJkCe96ay4gb1NJyhKN7mAyv4GPgxw_7lEGGwMSUXLq-bv18lqKbjqjGodeG6bKh69r8Cz1A3R0oa0_kvOd3jDB-N-7b5_H9ihXPrs-mp7KloSaAieSq4Q8_iyXX5_WlNDKplzwbLvHYkV4MmLNmjUePPI7RYqoy8wzF1pFw7ugj5LVx-AfLqVWg)
