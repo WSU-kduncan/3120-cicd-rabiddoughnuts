@@ -42,4 +42,4 @@
 - I created a GitHub workflow to automate syncronization of my Dockerhub.
   - This workflow activates whenever I push an update to the main branch of my repo, and logs into Dockerhub, and then builds and pushes an image from my docker Dockerfile.
   - I use an environment variable for my Dockerhub repo name, as well as my unique secrets for my Dockerhub username and login credentials.
-
+silly
