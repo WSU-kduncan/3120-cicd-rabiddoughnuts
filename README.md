@@ -1,5 +1,7 @@
 # Project Overview
 
+- This project is to practice using containers and images to streamline development processes. I am using Docker Desktop as my container software, working in wsl2, and making an image that hosts a web server using apache2.
+- Part 4 - Diagramming goes here
 ```mermaid
   flowchart LR
     subgraph Code
@@ -16,10 +18,6 @@
     Dockerhub-->Code
     Github-->Dockerhub
 ```
-    
-- This project is to practice using containers and images to streamline development processes. I am using Docker Desktop as my container software, working in wsl2, and making an image that hosts a web server using apache2.
-- Part 4 - Diagramming goes here
-  - Include a diagram (or diagrams) of your entire workflow. Meaning it should start with a project change / update, the steps that happen in between, and end with the updated version when the server is queried (web page is accessed)
 
 # Run Project Locally
 
@@ -42,4 +40,3 @@
 - I created a GitHub workflow to automate syncronization of my Dockerhub.
   - This workflow activates whenever I push an update to the main branch of my repo, and logs into Dockerhub, and then builds and pushes an image from my docker Dockerfile.
   - I use an environment variable for my Dockerhub repo name, as well as my unique secrets for my Dockerhub username and login credentials.
-silly
