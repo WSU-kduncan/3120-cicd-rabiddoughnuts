@@ -19,8 +19,8 @@ jobs:
           images:
             ${{ secrets.DOCK_NAME }}/${{ env.DOCKER_HUB_REPO }}
           tags:
+            type=ref,event=tag
             type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
