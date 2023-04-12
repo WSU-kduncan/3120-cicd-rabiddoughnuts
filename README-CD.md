@@ -1,5 +1,25 @@
 # Part 1
 
+```mermaid
+    flowchart LR
+      subgraph System
+      a1(repository <br> / code)
+      end
+      subgraph Github
+      b1(repository <br> / code)
+      end
+      subgraph Dockerhub
+      c1(Image <br> repo)
+      end
+      subgraph Host
+      d1(hosted <br> service)
+      end
+      System-->|commit <br> tag/push|Github
+      Github-->|workflow|Dockerhub & Host
+      Host-->|webhook <br> / script|Dockerhub
+      Host-->System
+```
+
 - The goal of this project is to practice using continuous deployment tools and understand the methods to improve deployment workflow. We will be using github workflows, webhooks, dockerhub, and docker to automate deployment.
 - The tag function is applied to the last commit with the command `git tag -a v1.2.3 -m "version message"` and then pushed with the command `git push origin v1.2.3`
 - A git workflow uses a virtualized setting to run commands that you set up when you push, tag, or potentially pull from github, depending on the criteria you set. My workflow runs when I push a new version and autobuilds my webhost image and tags it with my github versioning, and then sends a notification to my instance so that it will update the running image.
